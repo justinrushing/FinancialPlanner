@@ -14,7 +14,7 @@ struct FinancesVisualizerApp: App {
     var body: some Scene {
         WindowGroup {
             ScrollView {
-                VStack {
+                VStack(alignment: .leading, spacing: 16) {
                     ChartGrid(
                         history: store.history,
                         query: .init(
@@ -29,23 +29,24 @@ struct FinancesVisualizerApp: App {
                         .font(.title)
                     PortfolioSnapshotView(
                         snapshot: store.history.latestSnapshot,
-                        keypath: \.holding.category.categoryDescription
+                        keypath: \.holding.category.subcategoryDescription
                     )
 
                     Text("Non-Retirement Accounts")
                         .font(.title)
                     PortfolioSnapshotView(
                         snapshot: store.history.filter { !$0.account.retirementAccount }.latestSnapshot,
-                        keypath: \.holding.category.categoryDescription
+                        keypath: \.holding.category.subcategoryDescription
                     )
 
                     Text("Retirement Accounts")
                         .font(.title)
                     PortfolioSnapshotView(
                         snapshot: store.history.filter { $0.account.retirementAccount }.latestSnapshot,
-                        keypath: \.holding.symbol
+                        keypath: \.holding.category.subcategoryDescription
                     )
                 }
+                .padding()
             }
             .onAppear {
                 store.loadHistory(path: "/Users/jrush/Library/Mobile Documents/com~apple~CloudDocs/Fidelity History")
