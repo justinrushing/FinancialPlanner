@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		021802762A2962E400756005 /* FinancesVisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021802752A2962E400756005 /* FinancesVisualizerApp.swift */; };
+		021802782A2962E400756005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021802772A2962E400756005 /* ContentView.swift */; };
+		0218027A2A2962E500756005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021802792A2962E500756005 /* Assets.xcassets */; };
+		0218027D2A2962E500756005 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0218027C2A2962E500756005 /* Preview Assets.xcassets */; };
+		021802862A29636B00756005 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 021802852A29636B00756005 /* SwiftCSV */; };
+		021802892A29638800756005 /* FidelityPortfolioParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021802882A29638800756005 /* FidelityPortfolioParser.swift */; };
+		0218028B2A298A5F00756005 /* DictionaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218028A2A298A5F00756005 /* DictionaryDecoder.swift */; };
+		0218028E2A298C5500756005 /* PortfolioHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218028D2A298C5500756005 /* PortfolioHistory.swift */; };
+		021802912A298CC600756005 /* Sequence+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021802902A298CC600756005 /* Sequence+Utilities.swift */; };
+		021802932A29915100756005 /* PortfolioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021802922A29915100756005 /* PortfolioStore.swift */; };
+		0277EEE02A32A1C100B2064D /* PortfolioMetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277EEDF2A32A1C100B2064D /* PortfolioMetadataStore.swift */; };
+		0277EEE22A32A4DC00B2064D /* ChartingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277EEE12A32A4DC00B2064D /* ChartingContext.swift */; };
+		0277EEE42A37D73200B2064D /* PortfolioSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277EEE32A37D73200B2064D /* PortfolioSnapshotView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		021802722A2962E400756005 /* FinancesVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancesVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		021802752A2962E400756005 /* FinancesVisualizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancesVisualizerApp.swift; sourceTree = "<group>"; };
+		021802772A2962E400756005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		021802792A2962E500756005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0218027C2A2962E500756005 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0218027E2A2962E500756005 /* FinancesVisualizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinancesVisualizer.entitlements; sourceTree = "<group>"; };
+		021802882A29638800756005 /* FidelityPortfolioParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidelityPortfolioParser.swift; sourceTree = "<group>"; };
+		0218028A2A298A5F00756005 /* DictionaryDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryDecoder.swift; sourceTree = "<group>"; };
+		0218028D2A298C5500756005 /* PortfolioHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioHistory.swift; sourceTree = "<group>"; };
+		021802902A298CC600756005 /* Sequence+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Utilities.swift"; sourceTree = "<group>"; };
+		021802922A29915100756005 /* PortfolioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStore.swift; sourceTree = "<group>"; };
+		0277EEDF2A32A1C100B2064D /* PortfolioMetadataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioMetadataStore.swift; sourceTree = "<group>"; };
+		0277EEE12A32A4DC00B2064D /* ChartingContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartingContext.swift; sourceTree = "<group>"; };
+		0277EEE32A37D73200B2064D /* PortfolioSnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSnapshotView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0218026F2A2962E400756005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021802862A29636B00756005 /* SwiftCSV in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		021802692A2962E400756005 = {
+			isa = PBXGroup;
+			children = (
+				021802742A2962E400756005 /* FinancesVisualizer */,
+				021802732A2962E400756005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		021802732A2962E400756005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				021802722A2962E400756005 /* FinancesVisualizer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		021802742A2962E400756005 /* FinancesVisualizer */ = {
+			isa = PBXGroup;
+			children = (
+				0218028F2A298CBA00756005 /* Utilities */,
+				0218028C2A298C4200756005 /* Store */,
+				021802872A29637100756005 /* Parsing */,
+				021802752A2962E400756005 /* FinancesVisualizerApp.swift */,
+				021802772A2962E400756005 /* ContentView.swift */,
+				021802792A2962E500756005 /* Assets.xcassets */,
+				0218027E2A2962E500756005 /* FinancesVisualizer.entitlements */,
+				0218027B2A2962E500756005 /* Preview Content */,
+				0277EEE32A37D73200B2064D /* PortfolioSnapshotView.swift */,
+			);
+			path = FinancesVisualizer;
+			sourceTree = "<group>";
+		};
+		0218027B2A2962E500756005 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0218027C2A2962E500756005 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		021802872A29637100756005 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				021802882A29638800756005 /* FidelityPortfolioParser.swift */,
+				0218028A2A298A5F00756005 /* DictionaryDecoder.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		0218028C2A298C4200756005 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				0218028D2A298C5500756005 /* PortfolioHistory.swift */,
+				021802922A29915100756005 /* PortfolioStore.swift */,
+				0277EEDF2A32A1C100B2064D /* PortfolioMetadataStore.swift */,
+				0277EEE12A32A4DC00B2064D /* ChartingContext.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		0218028F2A298CBA00756005 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				021802902A298CC600756005 /* Sequence+Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		021802712A2962E400756005 /* FinancesVisualizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021802812A2962E500756005 /* Build configuration list for PBXNativeTarget "FinancesVisualizer" */;
+			buildPhases = (
+				0218026E2A2962E400756005 /* Sources */,
+				0218026F2A2962E400756005 /* Frameworks */,
+				021802702A2962E400756005 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinancesVisualizer;
+			packageProductDependencies = (
+				021802852A29636B00756005 /* SwiftCSV */,
+			);
+			productName = FinancesVisualizer;
+			productReference = 021802722A2962E400756005 /* FinancesVisualizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0218026A2A2962E400756005 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					021802712A2962E400756005 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 0218026D2A2962E400756005 /* Build configuration list for PBXProject "FinancesVisualizer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 021802692A2962E400756005;
+			packageReferences = (
+				021802842A29636B00756005 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+			);
+			productRefGroup = 021802732A2962E400756005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				021802712A2962E400756005 /* FinancesVisualizer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		021802702A2962E400756005 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0218027D2A2962E500756005 /* Preview Assets.xcassets in Resources */,
+				0218027A2A2962E500756005 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0218026E2A2962E400756005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021802912A298CC600756005 /* Sequence+Utilities.swift in Sources */,
+				021802782A2962E400756005 /* ContentView.swift in Sources */,
+				021802932A29915100756005 /* PortfolioStore.swift in Sources */,
+				0277EEE02A32A1C100B2064D /* PortfolioMetadataStore.swift in Sources */,
+				0277EEE42A37D73200B2064D /* PortfolioSnapshotView.swift in Sources */,
+				021802762A2962E400756005 /* FinancesVisualizerApp.swift in Sources */,
+				0218028B2A298A5F00756005 /* DictionaryDecoder.swift in Sources */,
+				0277EEE22A32A4DC00B2064D /* ChartingContext.swift in Sources */,
+				0218028E2A298C5500756005 /* PortfolioHistory.swift in Sources */,
+				021802892A29638800756005 /* FidelityPortfolioParser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0218027F2A2962E500756005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		021802802A2962E500756005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		021802822A2962E500756005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FinancesVisualizer/FinancesVisualizer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FinancesVisualizer/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.FinancesVisualizer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx.internal;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		021802832A2962E500756005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FinancesVisualizer/FinancesVisualizer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FinancesVisualizer/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.FinancesVisualizer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx.internal;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0218026D2A2962E400756005 /* Build configuration list for PBXProject "FinancesVisualizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0218027F2A2962E500756005 /* Debug */,
+				021802802A2962E500756005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		021802812A2962E500756005 /* Build configuration list for PBXNativeTarget "FinancesVisualizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021802822A2962E500756005 /* Debug */,
+				021802832A2962E500756005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		021802842A29636B00756005 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		021802852A29636B00756005 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 021802842A29636B00756005 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0218026A2A2962E400756005 /* Project object */;
+}
