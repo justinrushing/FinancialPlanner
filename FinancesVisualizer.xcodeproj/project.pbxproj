@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		021802762A2962E400756005 /* FinancesVisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021802752A2962E400756005 /* FinancesVisualizerApp.swift */; };
-		021802782A2962E400756005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021802772A2962E400756005 /* ContentView.swift */; };
+		021802782A2962E400756005 /* ChartGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021802772A2962E400756005 /* ChartGrid.swift */; };
 		0218027A2A2962E500756005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021802792A2962E500756005 /* Assets.xcassets */; };
 		0218027D2A2962E500756005 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0218027C2A2962E500756005 /* Preview Assets.xcassets */; };
 		021802862A29636B00756005 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 021802852A29636B00756005 /* SwiftCSV */; };
@@ -20,12 +20,17 @@
 		0277EEE02A32A1C100B2064D /* PortfolioMetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277EEDF2A32A1C100B2064D /* PortfolioMetadataStore.swift */; };
 		0277EEE22A32A4DC00B2064D /* ChartingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277EEE12A32A4DC00B2064D /* ChartingContext.swift */; };
 		0277EEE42A37D73200B2064D /* PortfolioSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277EEE32A37D73200B2064D /* PortfolioSnapshotView.swift */; };
+		0292B3AD2A43C817006D58B3 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292B3AC2A43C817006D58B3 /* ProjectionView.swift */; };
+		0292B3B02A43CA7C006D58B3 /* ProjectionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292B3AF2A43CA7C006D58B3 /* ProjectionTab.swift */; };
+		0292B3B32A43CAC5006D58B3 /* AllocationsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292B3B22A43CAC5006D58B3 /* AllocationsTab.swift */; };
+		0292B3B52A43CB4D006D58B3 /* ConfigurationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292B3B42A43CB4D006D58B3 /* ConfigurationStore.swift */; };
+		0292B3B72A43CC60006D58B3 /* ProjectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292B3B62A43CC60006D58B3 /* ProjectionHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		021802722A2962E400756005 /* FinancesVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancesVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		021802752A2962E400756005 /* FinancesVisualizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancesVisualizerApp.swift; sourceTree = "<group>"; };
-		021802772A2962E400756005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		021802772A2962E400756005 /* ChartGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartGrid.swift; sourceTree = "<group>"; };
 		021802792A2962E500756005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0218027C2A2962E500756005 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0218027E2A2962E500756005 /* FinancesVisualizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinancesVisualizer.entitlements; sourceTree = "<group>"; };
@@ -37,6 +42,11 @@
 		0277EEDF2A32A1C100B2064D /* PortfolioMetadataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioMetadataStore.swift; sourceTree = "<group>"; };
 		0277EEE12A32A4DC00B2064D /* ChartingContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartingContext.swift; sourceTree = "<group>"; };
 		0277EEE32A37D73200B2064D /* PortfolioSnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSnapshotView.swift; sourceTree = "<group>"; };
+		0292B3AC2A43C817006D58B3 /* ProjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionView.swift; sourceTree = "<group>"; };
+		0292B3AF2A43CA7C006D58B3 /* ProjectionTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionTab.swift; sourceTree = "<group>"; };
+		0292B3B22A43CAC5006D58B3 /* AllocationsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationsTab.swift; sourceTree = "<group>"; };
+		0292B3B42A43CB4D006D58B3 /* ConfigurationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationStore.swift; sourceTree = "<group>"; };
+		0292B3B62A43CC60006D58B3 /* ProjectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,15 +80,13 @@
 		021802742A2962E400756005 /* FinancesVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				0292B3AB2A43C803006D58B3 /* Views */,
 				0218028F2A298CBA00756005 /* Utilities */,
 				0218028C2A298C4200756005 /* Store */,
 				021802872A29637100756005 /* Parsing */,
-				021802752A2962E400756005 /* FinancesVisualizerApp.swift */,
-				021802772A2962E400756005 /* ContentView.swift */,
 				021802792A2962E500756005 /* Assets.xcassets */,
 				0218027E2A2962E500756005 /* FinancesVisualizer.entitlements */,
 				0218027B2A2962E500756005 /* Preview Content */,
-				0277EEE32A37D73200B2064D /* PortfolioSnapshotView.swift */,
 			);
 			path = FinancesVisualizer;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 				021802922A29915100756005 /* PortfolioStore.swift */,
 				0277EEDF2A32A1C100B2064D /* PortfolioMetadataStore.swift */,
 				0277EEE12A32A4DC00B2064D /* ChartingContext.swift */,
+				0292B3B42A43CB4D006D58B3 /* ConfigurationStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -117,6 +126,36 @@
 				021802902A298CC600756005 /* Sequence+Utilities.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0292B3AB2A43C803006D58B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0292B3B12A43CABC006D58B3 /* Allocations */,
+				0292B3AE2A43CA6F006D58B3 /* Projections */,
+				021802752A2962E400756005 /* FinancesVisualizerApp.swift */,
+				021802772A2962E400756005 /* ChartGrid.swift */,
+				0277EEE32A37D73200B2064D /* PortfolioSnapshotView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0292B3AE2A43CA6F006D58B3 /* Projections */ = {
+			isa = PBXGroup;
+			children = (
+				0292B3AC2A43C817006D58B3 /* ProjectionView.swift */,
+				0292B3AF2A43CA7C006D58B3 /* ProjectionTab.swift */,
+				0292B3B62A43CC60006D58B3 /* ProjectionHelper.swift */,
+			);
+			path = Projections;
+			sourceTree = "<group>";
+		};
+		0292B3B12A43CABC006D58B3 /* Allocations */ = {
+			isa = PBXGroup;
+			children = (
+				0292B3B22A43CAC5006D58B3 /* AllocationsTab.swift */,
+			);
+			path = Allocations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,15 +235,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				021802912A298CC600756005 /* Sequence+Utilities.swift in Sources */,
-				021802782A2962E400756005 /* ContentView.swift in Sources */,
+				021802782A2962E400756005 /* ChartGrid.swift in Sources */,
 				021802932A29915100756005 /* PortfolioStore.swift in Sources */,
 				0277EEE02A32A1C100B2064D /* PortfolioMetadataStore.swift in Sources */,
+				0292B3B52A43CB4D006D58B3 /* ConfigurationStore.swift in Sources */,
+				0292B3B72A43CC60006D58B3 /* ProjectionHelper.swift in Sources */,
 				0277EEE42A37D73200B2064D /* PortfolioSnapshotView.swift in Sources */,
 				021802762A2962E400756005 /* FinancesVisualizerApp.swift in Sources */,
 				0218028B2A298A5F00756005 /* DictionaryDecoder.swift in Sources */,
 				0277EEE22A32A4DC00B2064D /* ChartingContext.swift in Sources */,
 				0218028E2A298C5500756005 /* PortfolioHistory.swift in Sources */,
+				0292B3AD2A43C817006D58B3 /* ProjectionView.swift in Sources */,
+				0292B3B02A43CA7C006D58B3 /* ProjectionTab.swift in Sources */,
 				021802892A29638800756005 /* FidelityPortfolioParser.swift in Sources */,
+				0292B3B32A43CAC5006D58B3 /* AllocationsTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
