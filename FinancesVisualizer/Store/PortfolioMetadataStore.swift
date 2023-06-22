@@ -61,6 +61,7 @@ private enum Constants {
         .init(symbol: "NHFSMKX98", category: .US(.largeCap), description: "NH FIDELITY 500 INDEX"),
         .init(symbol: "**", category: .cash, description: "Unidentified Cash"),
         .init(symbol: "", category: .cash, description: "Unidentified Cash"),
-        .init(symbol: "CRM", category: .US(.largeCap), description: "Salesforce, Inc.")
+        .init(symbol: "CRM", category: .US(.largeCap), description: "Salesforce, Inc."),
+        .init(symbol: "STWD", category: .alternative(.realEstate), description: "Starwood")
     ]
 }
