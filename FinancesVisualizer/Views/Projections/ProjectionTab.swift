@@ -35,9 +35,9 @@ struct ProjectionTab: View {
         )
 
         return VStack {
-            ProjectionView(projections: projections.totalSavings)
-            ProjectionView(projections: projections.yearlyContribution)
-            ProjectionView(projections: projections.targetSpending)
+            ProjectionView(label: "Total Savings", projections: projections.totalSavings)
+            ProjectionView(label: "Yearly Contributions", projections: projections.yearlyContribution)
+            ProjectionView(label: "Target Spending", projections: projections.targetSpending)
         }
     }
 

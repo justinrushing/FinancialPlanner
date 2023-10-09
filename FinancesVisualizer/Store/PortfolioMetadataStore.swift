@@ -35,6 +35,8 @@ private enum Constants {
 
     static let holdings: [Holding] = [
         .init(symbol: "56199P818", category: .alternative(.privateEquity), description: "AMG PANTHEON FUND LLC WHEN ISSUE"),
+        .init(symbol: "001700137", category: .alternative(.privateEquity), description: "AMG PANTHEON FUND LLC WHEN ISSUE"),
+        .init(symbol: "XPEBX", category: .alternative(.privateEquity), description: "AMG PANTHEON FUND LLC WHEN ISSUE"),
         .init(symbol: "85570X405", category: .alternative(.realEstate), description: "STARWOOD REAL ESTATE INCOME TR COM CL I"),
         .init(symbol: "BND", category: .bond, description: "VANGUARD BD INDEX FDS TOTAL BND MRKT"),
         .init(symbol: "CORE**", category: .cash, description: "FDIC-INSURED DEPOSIT SWEEP"),
@@ -62,6 +64,9 @@ private enum Constants {
         .init(symbol: "**", category: .cash, description: "Unidentified Cash"),
         .init(symbol: "", category: .cash, description: "Unidentified Cash"),
         .init(symbol: "CRM", category: .US(.largeCap), description: "Salesforce, Inc."),
-        .init(symbol: "STWD", category: .alternative(.realEstate), description: "Starwood")
+        .init(symbol: "STWD", category: .alternative(.realEstate), description: "Starwood"),
+        .init(symbol: "USIG", category: .bond, description: "iShares Broad USD Investment Grade Corporate Bond ETF"),
+        .init(symbol: "AAPL", category: .US(.largeCap), description: "Apple"),
+        .init(symbol: "91282CCT6", category: .bond, description: "US Treasury 1 year")
     ]
 }

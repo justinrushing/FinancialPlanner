@@ -46,7 +46,8 @@ final class FidelityDataSource: PortfolioDataSource {
                     currentValue: $0.currentValue
                 )
             }
-        }
+        }.filter { $0.holding != .unknown(symbol: "Pending Activity") } // No reason to include these
+        print(records.map(\.holding))
         return .init(records: records)
     }
 }

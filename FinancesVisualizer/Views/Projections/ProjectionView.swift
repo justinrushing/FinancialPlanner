@@ -10,15 +10,23 @@ import Foundation
 import SwiftUI
 
 struct ProjectionView: View {
+    var label: String
     var projections: [ProjectedValue]
 
     var body: some View {
-        Chart {
-            ForEach(projections) { point in
-                BarMark(
-                    x: .value("Date", point.date),
-                    y: .value("Current Value", point.value)
-                )
+        VStack {
+            Text(label)
+
+            Chart {
+                ForEach(projections) { point in
+                    BarMark(
+                        x: .value("Date", point.date),
+                        y: .value("Current Value", point.value)
+                    )
+                }
+            }
+            .chartYAxis {
+                AxisMarks(format: .currency(code: "USD"))
             }
         }
     }

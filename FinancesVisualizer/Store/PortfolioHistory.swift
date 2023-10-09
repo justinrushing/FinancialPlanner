@@ -26,25 +26,25 @@ struct PortfolioRecord: Identifiable {
     var currentValue: Double
 }
 
-struct Holding {
+struct Holding: Equatable {
     var symbol: String
     var category: Category
     var description: String
 
     static func unknown(symbol: String) -> Holding {
-        .init(symbol: symbol, category: .unknown, description: "Unknown")
+        .init(symbol: symbol, category: .unknown(symbol), description: "Unknown")
     }
 
-    enum Category {
+    enum Category: Hashable {
         case US(USSubCategory)
         case emergingMarket
         case developedMarket
         case bond
         case cash
         case alternative(AlternativeSubCategory)
-        case unknown
+        case unknown(String)
 
-        enum AlternativeSubCategory {
+        enum AlternativeSubCategory: Hashable {
             case managedFutures
             case privateEquity
             case realEstate
@@ -60,7 +60,7 @@ struct Holding {
             }
         }
 
-        enum USSubCategory {
+        enum USSubCategory: Hashable {
             case individual
             case smallCap
             case midCap
@@ -133,4 +133,26 @@ struct PortfolioSnapshot {
     func percent(record: PortfolioRecord) -> Double {
         record.currentValue / totalValue
     }
+
+    func apply(filter: PortfolioSnapshotFilter) -> PortfolioSnapshot {
+        let records = self.records.filter {
+            if filter.contains(.removeCash) && $0.holding.category == .cash {
+                return false
+            }
+            return true
+        }
+        return .init(records: records)
+    }
+}
+
+struct PortfolioSnapshotFilter: OptionSet {
+    typealias RawValue = UInt
+
+    let rawValue: UInt
+
+    init(rawValue: RawValue) {
+        self.rawValue = rawValue
+    }
+
+    static let removeCash = Self(rawValue: 1 << 0)
 }

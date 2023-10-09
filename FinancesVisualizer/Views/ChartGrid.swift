@@ -9,12 +9,19 @@ import SwiftUI
 import Charts
 
 struct ChartGrid: View {
+    enum ChartType {
+        case area
+        case line
+    }
+
     private let history: PortfolioHistory
     private let query: ChartingQuery
+    private let type: ChartType
 
-    init(history: PortfolioHistory, query: ChartingQuery) {
+    init(history: PortfolioHistory, query: ChartingQuery, type: ChartType = .area) {
         self.history = history
         self.query = query
+        self.type = type
     }
 
     var body: some View {
@@ -37,11 +44,21 @@ struct ChartGrid: View {
             Chart {
                 ForEach(from.series) { series in
                     ForEach(series.points) { point in
-                        AreaMark(
-                            x: .value("Date", point.date),
-                            y: .value("Current Value", Double(point.value))
-                        )
-                        .foregroundStyle(by: .value("id", series.label))
+                        switch type {
+                        case .area:
+                            AreaMark(
+                                x: .value("Date", point.date),
+                                y: .value("Current Value", Double(point.value))
+                            )
+                            .foregroundStyle(by: .value("id", series.label))
+                        case .line:
+                            LineMark(
+                                x: .value("Date", point.date),
+                                y: .value("Current Value", Double(point.value))
+                            )
+                            .foregroundStyle(by: .value("id", series.label))
+                        }
+
                     }
                 }
             }

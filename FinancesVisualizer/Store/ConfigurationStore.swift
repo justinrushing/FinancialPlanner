@@ -39,6 +39,11 @@ final class ConfigurationStore: ObservableObject {
         set { write(value: newValue) }
     }
 
+    var filterCash: Bool {
+        get { read() }
+        set { write(value: newValue) }
+    }
+
     // MARK: - Helpers
 
     private func write(value: Any?, key: String = #function) {
@@ -48,6 +53,10 @@ final class ConfigurationStore: ObservableObject {
 
     private func read(key: String = #function) -> Double {
         defaults.double(forKey: key)
+    }
+
+    private func read(key: String = #function) -> Bool {
+        defaults.bool(forKey: key)
     }
 
     private func read(key: String = #function) -> Int {
