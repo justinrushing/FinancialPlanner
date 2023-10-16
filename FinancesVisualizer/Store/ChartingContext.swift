@@ -74,6 +74,47 @@ struct ChartingQuery {
         var id: String { name }
         let name: String
         let series: [Series]
+        let minDate: Date?
+        let maxDate: Date?
+
+        init(name: String, series: [Series]) {
+            self.name = name
+            self.series = series
+            self.minDate = series.flatMap(\.points).map(\.date).min()
+            self.maxDate = series.flatMap(\.points).map(\.date).max()
+        }
+
+        func closestDate(to: Date?) -> Date? {
+            guard let to else { return nil }
+
+            var returnDate: Date? = nil
+            for series in series {
+                for point in series.points {
+                    if let d = returnDate {
+                        if abs(d.timeIntervalSince(to)) > abs(point.date.timeIntervalSince(to)) {
+                            returnDate = point.date
+                        }
+                    } else {
+                        returnDate = point.date
+                    }
+                }
+            }
+
+            return returnDate
+        }
+
+        func summary(date: Date) -> Summary {
+            var values: [String: CGFloat] = [:]
+            for series in series {
+                for point in series.points {
+                    if point.date == date {
+                        values[series.label] = point.value
+                    }
+                }
+            }
+
+            return .init(date: date, values: values)
+        }
 
         struct Series: Identifiable {
             var id: String { label }
@@ -84,6 +125,15 @@ struct ChartingQuery {
                 var id: Date { date }
                 let date: Date
                 let value: CGFloat
+            }
+        }
+
+        struct Summary {
+            let date: Date
+            let values: [String: CGFloat]
+
+            var total: CGFloat {
+                values.values.reduce(0, +)
             }
         }
     }
