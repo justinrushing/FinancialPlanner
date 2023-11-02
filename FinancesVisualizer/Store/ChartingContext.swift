@@ -13,14 +13,18 @@ struct ChartingQuery {
         case min
         case max
         case avg
+        case percent
         case count
 
-        func reduce(values: [Double]) -> Double {
+        func reduce(values: [Double], total: Double?) -> Double {
             switch self {
             case .sum: return values.reduce(0, +)
             case .min: return values.min() ?? 0
             case .max: return values.max() ?? 0
             case .avg: return values.reduce(0, +) / Double(values.count)
+            case .percent: 
+                guard let total = total else { return 0 }
+                return (values.reduce(0, +) / total) * 100.0
             case .count: return Double(values.count)
             }
         }
@@ -34,10 +38,16 @@ struct ChartingQuery {
     func run(history: PortfolioHistory) -> [Chart] {
         let snapshotsByGrid = performGrid(records: history.records)
 
-        return snapshotsByGrid.map { key, value in
-            let snapshotsBySeries = performSplit(records: value)
+        return snapshotsByGrid.map { key, records in
+            let totalByDate: [Date: Double] = records
+                .organized(by: \.date)
+                .mapValues {
+                    $0.map { $0[keyPath: property] }.reduce(0, +)
+                }
+
+            let snapshotsBySeries = performSplit(records: records)
             let series: [Chart.Series] = snapshotsBySeries.map { key, value in
-                return .init(label: key, points: processPoints(records: value))
+                return .init(label: key, points: processPoints(records: value, totalByDate: totalByDate))
             }.sorted {
                 $0.points[$0.points.count - 1].value < $1.points[$1.points.count - 1].value
             }
@@ -62,10 +72,16 @@ struct ChartingQuery {
         return records.organized { $0[keyPath: grid] }
     }
 
-    private func processPoints(records: [PortfolioRecord]) -> [Chart.Series.Point] {
+    private func processPoints(
+        records: [PortfolioRecord],
+        totalByDate: [Date: Double]
+    ) -> [Chart.Series.Point] {
         let recordsByDate = records.organized(by: \.date)
         return recordsByDate.map { date, records in
-            let value = reducer.reduce(values: records.map { $0[keyPath: property] })
+            let value = reducer.reduce(
+                values: records.map { $0[keyPath: property] },
+                total: totalByDate[date]
+            )
             return .init(date: date, value: value)
         }.sorted { $0.date < $1.date }
     }

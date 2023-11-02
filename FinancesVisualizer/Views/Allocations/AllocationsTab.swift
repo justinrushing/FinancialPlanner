@@ -48,6 +48,18 @@ struct AllocationsTab: View {
             )
             .frame(height: 300)
 
+            ChartGrid(
+                history: filteredHistory,
+                query: .init(
+                    reducer: .percent,
+                    property: \.currentValue,
+                    split: \.holding.category.categoryDescription
+                ),
+                type: .line
+            )
+            .frame(height: 300)
+
+
             Text("All")
                 .font(.title)
             PortfolioSnapshotView(
