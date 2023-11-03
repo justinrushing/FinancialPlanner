@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct InvestmentAccount {
+struct InvestmentAccount: Hashable {
     var accountID: String
     var accountName: String
     var retirementAccount: Bool
@@ -24,9 +24,13 @@ struct PortfolioRecord: Identifiable {
     var holding: Holding
     var date: Date
     var currentValue: Double
+
+    var uniqueHolding: UniqueHolding {
+        .init(holding: holding, account: account)
+    }
 }
 
-struct Holding: Equatable {
+struct Holding: Hashable {
     var symbol: String
     var category: Category
     var description: String
@@ -100,6 +104,11 @@ struct Holding: Equatable {
     }
 }
 
+struct UniqueHolding: Hashable {
+    var holding: Holding
+    var account: InvestmentAccount
+}
+
 struct PortfolioHistory {
     var records: [PortfolioRecord]
 
@@ -115,7 +124,49 @@ struct PortfolioHistory {
     }
 
     init(records: [PortfolioRecord]) {
-        self.records = records.sorted { $0.date < $1.date }
+        self.records = Self.interpolate(records: records).sorted { $0.date < $1.date }
+    }
+
+    private static func interpolate(records: [PortfolioRecord]) -> [PortfolioRecord] {
+        let calendar = Calendar.current
+
+        let recordsByHolding = records.organized(by: \.uniqueHolding)
+
+        var output = [UniqueHolding: [PortfolioRecord]]()
+        for (holding, records) in recordsByHolding {
+            let sorted = records.sorted { $0.date < $1.date }
+            var outputForHolding = [PortfolioRecord]()
+            var previous: PortfolioRecord?
+            for record in sorted {
+                defer {
+                    outputForHolding.append(record)
+                    previous = record
+                }
+
+                guard let previous = previous else { continue }
+
+                let days = calendar.dateComponents([.day], from: previous.date, to: record.date).day ?? 1
+                guard days > 0 else { continue }
+
+                for day in (1..<days) {
+                    guard let date = calendar.date(byAdding: .day, value: day, to: previous.date) else {
+                        continue
+                    }
+                    print("Creating something for date \(date)")
+                    let step = (record.currentValue - previous.currentValue) / Double(days)
+                    let value = (Double(day) * step) + previous.currentValue
+
+                    var newRecord = previous
+                    newRecord.date = date
+                    newRecord.currentValue = value
+                    outputForHolding.append(newRecord)
+                }
+            }
+            
+            output[holding] = outputForHolding
+        }
+
+        return output.values.flatMap { $0 }
     }
 }
 

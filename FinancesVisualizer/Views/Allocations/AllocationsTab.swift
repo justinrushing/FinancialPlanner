@@ -18,6 +18,7 @@ struct AllocationsTab: View {
         if config.filterCash {
             return history.filter { $0.holding.category != .cash }
         }
+
         return history
     }
 
