@@ -44,11 +44,34 @@ final class ConfigurationStore: ObservableObject {
         set { write(value: newValue) }
     }
 
+    // MARK: - Taxes
+
+    var income: Double {
+        get { read() }
+        set { write(value: newValue) }
+    }
+
+    var pretaxDeduction: Double {
+        get { read() }
+        set { write(value: newValue) }
+    }
+
+    var taxRate: TaxRateDescriptor {
+        get { readCodable() ?? .defaultRate }
+        set { writeCodable(value: newValue) }
+    }
+
     // MARK: - Helpers
 
     private func write(value: Any?, key: String = #function) {
         defaults.set(value, forKey: key)
         self.objectWillChange.send()
+    }
+
+    private func writeCodable<T: Codable>(value: T?, key: String = #function) {
+        let encoder = JSONEncoder()
+        let data = try? encoder.encode(value)
+        write(value: data, key: key)
     }
 
     private func read(key: String = #function) -> Double {
@@ -61,5 +84,13 @@ final class ConfigurationStore: ObservableObject {
 
     private func read(key: String = #function) -> Int {
         defaults.integer(forKey: key)
+    }
+
+    private func readCodable<T: Codable>(key: String = #function) -> T? {
+        guard let data = defaults.data(forKey: key) else {
+            return nil
+        }
+        let decoder = JSONDecoder()
+        return try? decoder.decode(T.self, from: data)
     }
 }

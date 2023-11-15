@@ -20,6 +20,9 @@ struct FinancesVisualizerApp: App {
 
                     ProjectionTab()
                         .tabItem { Text("Projections") }
+
+                    TaxTab()
+                        .tabItem { Text("Taxes") }
                 }
                 .padding()
             }

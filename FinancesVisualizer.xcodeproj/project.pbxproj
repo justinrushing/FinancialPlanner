@@ -25,6 +25,8 @@
 		0292B3B32A43CAC5006D58B3 /* AllocationsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292B3B22A43CAC5006D58B3 /* AllocationsTab.swift */; };
 		0292B3B52A43CB4D006D58B3 /* ConfigurationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292B3B42A43CB4D006D58B3 /* ConfigurationStore.swift */; };
 		0292B3B72A43CC60006D58B3 /* ProjectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292B3B62A43CC60006D58B3 /* ProjectionHelper.swift */; };
+		02B5B9962B04603B00E1C2AD /* TaxTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5B9952B04603B00E1C2AD /* TaxTab.swift */; };
+		02B5B9982B04607900E1C2AD /* TaxRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5B9972B04607900E1C2AD /* TaxRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		0292B3B22A43CAC5006D58B3 /* AllocationsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationsTab.swift; sourceTree = "<group>"; };
 		0292B3B42A43CB4D006D58B3 /* ConfigurationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationStore.swift; sourceTree = "<group>"; };
 		0292B3B62A43CC60006D58B3 /* ProjectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionHelper.swift; sourceTree = "<group>"; };
+		02B5B9952B04603B00E1C2AD /* TaxTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTab.swift; sourceTree = "<group>"; };
+		02B5B9972B04607900E1C2AD /* TaxRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		0292B3AB2A43C803006D58B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				02B5B9942B04602300E1C2AD /* Taxes */,
 				0292B3B12A43CABC006D58B3 /* Allocations */,
 				0292B3AE2A43CA6F006D58B3 /* Projections */,
 				021802752A2962E400756005 /* FinancesVisualizerApp.swift */,
@@ -156,6 +161,15 @@
 				0292B3B22A43CAC5006D58B3 /* AllocationsTab.swift */,
 			);
 			path = Allocations;
+			sourceTree = "<group>";
+		};
+		02B5B9942B04602300E1C2AD /* Taxes */ = {
+			isa = PBXGroup;
+			children = (
+				02B5B9952B04603B00E1C2AD /* TaxTab.swift */,
+				02B5B9972B04607900E1C2AD /* TaxRate.swift */,
+			);
+			path = Taxes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B5B9982B04607900E1C2AD /* TaxRate.swift in Sources */,
 				021802912A298CC600756005 /* Sequence+Utilities.swift in Sources */,
 				021802782A2962E400756005 /* ChartGrid.swift in Sources */,
 				021802932A29915100756005 /* PortfolioStore.swift in Sources */,
@@ -245,6 +260,7 @@
 				0218028B2A298A5F00756005 /* DictionaryDecoder.swift in Sources */,
 				0277EEE22A32A4DC00B2064D /* ChartingContext.swift in Sources */,
 				0218028E2A298C5500756005 /* PortfolioHistory.swift in Sources */,
+				02B5B9962B04603B00E1C2AD /* TaxTab.swift in Sources */,
 				0292B3AD2A43C817006D58B3 /* ProjectionView.swift in Sources */,
 				0292B3B02A43CA7C006D58B3 /* ProjectionTab.swift in Sources */,
 				021802892A29638800756005 /* FidelityPortfolioParser.swift in Sources */,
