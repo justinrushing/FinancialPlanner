@@ -67,6 +67,7 @@ private enum Constants {
         .init(symbol: "STWD", category: .alternative(.realEstate), description: "Starwood"),
         .init(symbol: "USIG", category: .bond, description: "iShares Broad USD Investment Grade Corporate Bond ETF"),
         .init(symbol: "AAPL", category: .US(.largeCap), description: "Apple"),
-        .init(symbol: "91282CCT6", category: .bond, description: "US Treasury 1 year")
+        .init(symbol: "91282CCT6", category: .bond, description: "US Treasury 1 year"),
+        .init(symbol: "VCITX", category: .bond, description: "VANGUARD CA LONG TRM TAX XMPT INVESTOR CL")
     ]
 }

@@ -9,6 +9,21 @@ import Foundation
 import SwiftUI
 
 struct AllocationsTab: View {
+    enum BreakdownType: String, CaseIterable, Identifiable {
+        var id: String { rawValue }
+        static var defaultValue: Self = .category
+
+        case category = "Category"
+        case subcategory = "Subcategory"
+
+        var split: KeyPath<PortfolioRecord, String> {
+            switch self {
+            case .category: return \.holding.category.categoryDescription
+            case .subcategory: return \.holding.category.subcategoryDescription
+            }
+        }
+    }
+
     @ObservedObject var config = ConfigurationStore.shared
     @ObservedObject var store = PortfolioStore.shared
 
@@ -25,14 +40,18 @@ struct AllocationsTab: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Toggle(isOn: $config.filterCash) { Text("Filter out cash") }
+            Picker("Breakdown", selection: $config.allocationsSelectedBreakdown) {
+                ForEach(BreakdownType.allCases) { descriptor in
+                    Text(descriptor.rawValue).tag(descriptor)
+                }
+            }
 
             ChartGrid(
                 history: filteredHistory,
                 query: .init(
                     reducer: .sum,
                     property: \.currentValue,
-                    split: \.holding.category.categoryDescription
-//                    grid: \.account.accountName
+                    split: config.allocationsSelectedBreakdown.split
                 ),
                 type: .area
             )
@@ -54,7 +73,7 @@ struct AllocationsTab: View {
                 query: .init(
                     reducer: .percent,
                     property: \.currentValue,
-                    split: \.holding.category.categoryDescription
+                    split: config.allocationsSelectedBreakdown.split
                 ),
                 type: .line
             )
@@ -65,7 +84,7 @@ struct AllocationsTab: View {
                 .font(.title)
             PortfolioSnapshotView(
                 snapshot: filteredHistory.latestSnapshot,
-                keypath: \.holding.category.subcategoryDescription
+                keypath: config.allocationsSelectedBreakdown.split
             )
 
             Text("Non-Retirement Accounts")
@@ -74,14 +93,14 @@ struct AllocationsTab: View {
                 snapshot: filteredHistory
                     .filter { !$0.account.retirementAccount }
                     .latestSnapshot,
-                keypath: \.holding.category.subcategoryDescription
+                keypath: config.allocationsSelectedBreakdown.split
             )
 
             Text("Retirement Accounts")
                 .font(.title)
             PortfolioSnapshotView(
                 snapshot: filteredHistory.filter { $0.account.retirementAccount }.latestSnapshot,
-                keypath: \.holding.category.subcategoryDescription
+                keypath: config.allocationsSelectedBreakdown.split
             )
         }
     }

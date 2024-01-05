@@ -12,6 +12,18 @@ final class ConfigurationStore: ObservableObject {
 
     private let defaults = UserDefaults.standard
 
+    // MARK: - Allocations
+
+    var allocationsSelectedBreakdown: AllocationsTab.BreakdownType {
+        get {
+            if let stringValue: String = read() {
+                return .init(rawValue: stringValue) ?? .defaultValue
+            }
+            return .defaultValue
+        }
+        set { write(value: newValue.rawValue) }
+    }
+
     // MARK: - Synthesized Properties
 
     var compoundRate: Double {
@@ -84,6 +96,10 @@ final class ConfigurationStore: ObservableObject {
 
     private func read(key: String = #function) -> Int {
         defaults.integer(forKey: key)
+    }
+
+    private func read(key: String = #function) -> String? {
+        defaults.string(forKey: key)
     }
 
     private func readCodable<T: Codable>(key: String = #function) -> T? {

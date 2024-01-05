@@ -68,7 +68,10 @@ struct ChartGrid: View {
                     RectangleMark(x: .value("Date", selectedDate))
                         .foregroundStyle(.primary.opacity(0.2))
                         .annotation(position: moreThanHalfWay(date: selectedDate, chart: from) ? .leading : .trailing) {
-                            AnnotationView(summary: from.summary(date: selectedDate))
+                            VStack {
+                                AnnotationView(summary: from.summary(date: selectedDate))
+                                    .frame(maxHeight: 100)
+                            }
                         }
                 }
             }

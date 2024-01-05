@@ -152,7 +152,6 @@ struct PortfolioHistory {
                     guard let date = calendar.date(byAdding: .day, value: day, to: previous.date) else {
                         continue
                     }
-                    print("Creating something for date \(date)")
                     let step = (record.currentValue - previous.currentValue) / Double(days)
                     let value = (Double(day) * step) + previous.currentValue
 
