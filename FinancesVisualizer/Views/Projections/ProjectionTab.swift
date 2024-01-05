@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ProjectionTab: View {
+    @State var offset: Double = 0
     @ObservedObject var store = PortfolioStore.shared
     @ObservedObject var configuration = ConfigurationStore.shared
 
@@ -21,6 +22,8 @@ struct ProjectionTab: View {
 
     private var settings: some View {
         Form {
+            Text("Current Savings: \(store.history.latestSnapshot.totalValue)")
+            TextField("Offset", value: $offset, formatter: NumberFormatter())
             TextField("Retirement Year", value: $configuration.retirementYear, formatter: NumberFormatter())
             TextField("Target Spending", value: $configuration.targetSpending, formatter: NumberFormatter())
             TextField("Inflation Rate", value: $configuration.inflationRate, formatter: decimalFormatter)
@@ -31,7 +34,7 @@ struct ProjectionTab: View {
 
     private var totalProjectionView: some View {
         let projections = ProjectionHelper.shared.projectSavings(
-            startingValue: store.history.latestSnapshot.totalValue
+            startingValue: store.history.latestSnapshot.totalValue + offset
         )
 
         return VStack {
