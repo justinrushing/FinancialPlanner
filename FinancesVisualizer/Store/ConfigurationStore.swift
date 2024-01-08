@@ -56,6 +56,16 @@ final class ConfigurationStore: ObservableObject {
         set { write(value: newValue) }
     }
 
+    var projectedSocialSecurityIncome: Double {
+        get { read() }
+        set { write(value: newValue) }
+    }
+
+    var socialSecurityCollectionYear: Int {
+        get { read() }
+        set { write(value: newValue) }
+    }
+
     // MARK: - Taxes
 
     var income: Double {

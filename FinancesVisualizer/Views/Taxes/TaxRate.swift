@@ -70,8 +70,6 @@ extension TaxRate {
         var dollars: Double = 0
         for bracket in brackets {
             let previousIncome = previousBracket?.income ?? 0
-            print(previousIncome)
-
             let computedIncome = max(
                 min(income, bracket.income), 0
             )

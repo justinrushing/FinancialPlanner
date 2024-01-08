@@ -15,11 +15,13 @@ struct AllocationsTab: View {
 
         case category = "Category"
         case subcategory = "Subcategory"
+        case asset = "Asset"
 
         var split: KeyPath<PortfolioRecord, String> {
             switch self {
             case .category: return \.holding.category.categoryDescription
             case .subcategory: return \.holding.category.subcategoryDescription
+            case .asset: return \.holding.symbol
             }
         }
     }

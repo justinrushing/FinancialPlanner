@@ -25,6 +25,10 @@ struct PortfolioRecord: Identifiable {
     var date: Date
     var currentValue: Double
 
+    var year: Int {
+        Calendar.current.component(.year, from: date)
+    }
+
     var uniqueHolding: UniqueHolding {
         .init(holding: holding, account: account)
     }
@@ -46,6 +50,7 @@ struct Holding: Hashable {
         case bond
         case cash
         case alternative(AlternativeSubCategory)
+        case total
         case unknown(String)
 
         enum AlternativeSubCategory: Hashable {
@@ -90,7 +95,8 @@ struct Holding: Hashable {
             case .emergingMarket: return "Emerging Market"
             case .developedMarket: return "Developed Market"
             case .alternative: return "Alternative"
-            case .unknown: return "Unknown"
+            case .unknown(let symbol): return "Unknown (\(symbol))"
+            case .total: return "Total"
             }
         }
 

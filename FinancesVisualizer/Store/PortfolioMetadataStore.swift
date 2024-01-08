@@ -30,7 +30,8 @@ private enum Constants {
         .init(accountID: "235927060", accountName: "Justin - Managed Roth IRA", retirementAccount: true),
         .init(accountID: "239508010", accountName: "Justin - Managed Rollover IRA", retirementAccount: true),
         .init(accountID: "X85825584", accountName: "Joint - Checking", retirementAccount: true),
-        .init(accountID: "618457046", accountName: "Joint - 529 Account", retirementAccount: false)
+        .init(accountID: "618457046", accountName: "Joint - 529 Account", retirementAccount: false),
+        .init(accountID: "87886", accountName: "Apple 401(k) Plan", retirementAccount: true)
     ]
 
     static let holdings: [Holding] = [
@@ -68,6 +69,8 @@ private enum Constants {
         .init(symbol: "USIG", category: .bond, description: "iShares Broad USD Investment Grade Corporate Bond ETF"),
         .init(symbol: "AAPL", category: .US(.largeCap), description: "Apple"),
         .init(symbol: "91282CCT6", category: .bond, description: "US Treasury 1 year"),
-        .init(symbol: "VCITX", category: .bond, description: "VANGUARD CA LONG TRM TAX XMPT INVESTOR CL")
+        .init(symbol: "VCITX", category: .bond, description: "VANGUARD CA LONG TRM TAX XMPT INVESTOR CL"),
+        .init(symbol: "09259A676", category: .total, description: "LIFEPATH IDX 2055 A"),
+        .init(symbol: "037844404", category: .bond, description: "VG TOT BD MKT IDX")
     ]
 }

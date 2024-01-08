@@ -25,6 +25,8 @@ struct ProjectionTab: View {
             Text("Current Savings: \(store.history.latestSnapshot.totalValue)")
             TextField("Offset", value: $offset, formatter: NumberFormatter())
             TextField("Retirement Year", value: $configuration.retirementYear, formatter: NumberFormatter())
+            TextField("Social Security Year", value: $configuration.socialSecurityCollectionYear, formatter: NumberFormatter())
+            TextField("Social Security Income", value: $configuration.projectedSocialSecurityIncome, formatter: NumberFormatter())
             TextField("Target Spending", value: $configuration.targetSpending, formatter: NumberFormatter())
             TextField("Inflation Rate", value: $configuration.inflationRate, formatter: decimalFormatter)
             TextField("Compound Growth Rate", value: $configuration.compoundRate, formatter: decimalFormatter)

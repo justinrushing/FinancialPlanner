@@ -11,6 +11,18 @@ struct ProjectedValue: Identifiable {
     var id: Date { date }
     var date: Date
     var value: Double
+
+    var year: Int {
+        let calendar = Calendar.current
+        return calendar.component(.year, from: date)
+    }
+
+    func sameYearAs(date: Date) -> Bool {
+        let calendar = Calendar.current
+        let year1 = calendar.component(.year, from: self.date)
+        let year2 = calendar.component(.year, from: date)
+        return year1 == year2
+    }
 }
 
 struct Projection {
@@ -45,7 +57,11 @@ final class ProjectionHelper {
             var yearlyContribution = config.yearlyContribution * inflationMultiplier
             var targetSpending = config.targetSpending * inflationMultiplier
             if calendar.component(.year, from: date) >= config.retirementYear {
-                yearlyContribution = 0
+                if calendar.component(.year, from: date) >= config.socialSecurityCollectionYear {
+                    yearlyContribution = config.projectedSocialSecurityIncome * 12 * inflationMultiplier
+                } else {
+                    yearlyContribution = 0
+                }
             } else {
                 targetSpending = 0
             }
